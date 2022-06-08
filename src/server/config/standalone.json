@@ -1,0 +1,54 @@
+{
+    "pmk-logger": {
+        "formatters": {
+            "default": {
+                "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+            }
+        },
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+                "formatter": "default",
+                "level": "INFO",
+                "stream": "ext://sys.stdout"
+            },
+            "file": {
+                "class": "logging.FileHandler",
+                "filename": "__import__('datetime').datetime.now().strftime('data/pmk/logs/application_%Y_%m_%d.log')",
+                "formatter": "default",
+                "level": "INFO"
+            }
+        },
+        "loggers": {
+            "ACB": {
+                "handlers": [
+                    "file"
+                ],
+                "level": "INFO",
+                "propagate": "True",
+                "qualname": "src.error"
+            }
+        },
+        "root": {
+            "handlers": [
+                "console",
+                "file"
+            ],
+            "level": "DEBUG"
+        },
+        "version": 1
+    },
+    "interfaces": {
+        "inet-address": "0.0.0.0",
+        "port": 5000
+    },
+    "profile": {
+        "DevelopmentConfig": {
+            "API_NAME": "PMK",
+            "DEBUG": "True",
+            "SECRET_KEY": "123456790",
+            "SQLALCHEMY_DATABASE_URI": "sqlite:///../../data/pmk/db/local.db",
+            "SQLALCHEMY_TRACK_MODIFICATIONS": "False"
+        }
+    }
+}

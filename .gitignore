@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.idea/
+*.py[cod]
+*$py.class
+
+# This directory contains filesystem directory for the app to run
+/data/
+
+# This file contains the secrets and the configuration settings
+/src/server/config/standalone.json.run
+
+# This directory is the HTML files from ReadTheDocs
+/doc/_build/
+
+# Don't include the version of DB in the repository
+/migrations/
+
+# Ignore FUSE .fuse_hidden* files
+*.fuse_hidden*
+
+# Removing coverage binary
+.coverage
+
+# Removing bash files
+.bashrc
+.bash_history
+
+# Removing cache directory
+.cache
+.pytest_cache
+
+# File related to the building of package
+/acb_webapp_nextgen.egg-info
+/build
+/dist
